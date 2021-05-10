@@ -1,12 +1,23 @@
 package pr2.org;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class AppTest{
     Graph<Integer> myGraph;
+    Graph<Integer> myEdge;
+
+    @Before
+    public void setup(){
+        myGraph = new Graph<Integer>();
+        myEdge = new Graph<Integer>();
+    }
+
     /**
      * Rigorous Test :-)
      */
@@ -15,16 +26,53 @@ public class AppTest{
         assertTrue( true );
     }
     //primer test
-    @Test
-    public void setup(){
-        myGraph = new Graph<Integer>();
-    }
 
     @Test
     public void myGraphExists(){
         assertNotNull(myGraph);
     }
 
+    @Test
+    public void addVertexOk(){
+        assertTrue(myGraph.addVertex(1));
+        assertTrue(myGraph.addVertex(2));
+    }
+
+    @Test
+    public void addVertexFail(){
+        assertTrue(myGraph.addVertex(1));
+        assertFalse(myGraph.addVertex(1));
+    }
+
+    @Test
+    public void myEdgeExists(){
+        assertNotNull(myEdge);
+    }
+
+    @Test
+    public void addEdgeOk(){
+        myGraph.addVertex(1);
+        myGraph.addVertex(2);
+        assertTrue(myGraph.addEdge(1 , 2));
+    }
+
+    @Test
+    public void addEdgeFail(){
+        assertFalse(myEdge.addEdge(1 ,2));
+    }
+
+    @Test (expected = Exception.class)
+    void obtainAdjacentsFailWithException() {
+        this.myGraph.obtainAdjacents(myEdge);
+    }
+
+
+    @Test
+    public void firstToStringTest() {
+        String expectedOutput = "Vertice\t Conexiones\n";
+        assertEquals(expectedOutput, myGraph.toString());
+    }
+    
 }
 
 

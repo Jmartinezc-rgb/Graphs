@@ -17,10 +17,10 @@ private Map<V, Set<V>> adjacencyList = new HashMap<>();
 ******************************************************************/
 public boolean addVertex(V v){
     if(adjacencyList.containsKey(v)){
-        return false;//existía anteriormente
+        return false; //existía anteriormente
     }
     else{adjacencyList.put(v,new TreeSet<V>());
-        return true;//no estaba anteriormente
+        return true; //no estaba anteriormente
     }
 }
     /******************************************************************
@@ -34,8 +34,20 @@ public boolean addVertex(V v){
     contrario.
     ******************************************************************/
 public boolean addEdge(V v1, V v2){
-    return true; //Este código hay que modificarlo.
+    if(adjacencyList.containsKey(v1) && adjacencyList.containsKey(v2)){
+        Set<V> theEdgesFromV1 = adjacencyList.get(v1);
+        Set<V> theEdgesFromV2 = adjacencyList.get(v2);
+        if(!theEdgesFromV1.contains(v2) && !theEdgesFromV2.contains(v1)){
+            theEdgesFromV1.add(v2);
+            theEdgesFromV2.add(v1);
+            return true;
+        }
+        else return false;
     }
+    else{
+        return false;
+    }
+}
     /******************************************************************
     * Obtiene el conjunto de vértices adyacentes a ‘v‘.
     *
@@ -43,7 +55,10 @@ public boolean addEdge(V v1, V v2){
     * @return conjunto de vértices adyacentes.
     ******************************************************************/
 public Set<V> obtainAdjacents(V v) throws Exception{
-    return null; //Este código hay que modificarlo.
+    if (adjacencyList.containsKey(v)){
+        return adjacencyList.get(v);
+    }else
+        throw new Exception("vertice no existe"); //Este código hay que modificarlo.
     }
     /******************************************************************
     * Comprueba si el grafo contiene el vértice dado.
@@ -52,7 +67,7 @@ public Set<V> obtainAdjacents(V v) throws Exception{
     * @return ‘true‘ si ‘v‘ es un vértice del grafo.
     ******************************************************************/
 public boolean containsVertex(V v){
-    return true; //Este código hay que modificarlo.
+        return null; //Este código hay que modificarlo.
     }
     /******************************************************************
     * Método ‘toString()‘ reescrito para la clase ‘Grafo.java‘.
@@ -61,6 +76,9 @@ public boolean containsVertex(V v){
     ******************************************************************/
 @Override
 public String toString(){
+    for (V adjacencyList : ) {
+        
+    }
 return ""; //Este código hay que modificarlo.
 }
 /******************************************************************
