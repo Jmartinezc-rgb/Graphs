@@ -1,7 +1,13 @@
 -------------------------------------------------------------------------------
 Test set: pr2.org.AppTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.046 s <<< FAILURE! - in pr2.org.AppTest
-initializationError(pr2.org.AppTest)  Time elapsed: 0.007 s  <<< ERROR!
-java.lang.Exception: Method obtainAdjacentsFailWithException() should be public
+Tests run: 9, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.051 s <<< FAILURE! - in pr2.org.AppTest
+firstToStringTest(pr2.org.AppTest)  Time elapsed: 0.006 s  <<< ERROR!
+java.lang.Error: 
+Unresolved compilation problems: 
+	Syntax error, insert ";" to complete BlockStatements
+	Syntax error, insert ")" to complete Expression
+	graph cannot be resolved
+
+	at pr2.org.AppTest.firstToStringTest(AppTest.java:73)
 

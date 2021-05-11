@@ -58,7 +58,7 @@ public Set<V> obtainAdjacents(V v) throws Exception{
     if (adjacencyList.containsKey(v)){
         return adjacencyList.get(v);
     }else
-        throw new Exception("vertice no existe"); //Este código hay que modificarlo.
+        throw new Exception("Vértice no existe"); //Este código hay que modificarlo.
     }
     /******************************************************************
     * Comprueba si el grafo contiene el vértice dado.
@@ -74,12 +74,16 @@ public boolean containsVertex(V v){
     * @return una cadena de caracteres con la lista de adyacencia
     .
     ******************************************************************/
+
 @Override
 public String toString(){
-    for (V adjacencyList : ) {
-        
+    StringBuilder mycode = new StringBuilder("Vertice\t Conexiones\n")
+    for (V graph : this.adjacencyList.keySet()){
+        mycode.append(graph.toString());
+        mycode.append("Vertice\t Conexiones\n");
+        mycode.append(adjacencyList.get(graph).toString();
     }
-return ""; //Este código hay que modificarlo.
+    return graph.toString(); //Este código hay que modificarlo.
 }
 /******************************************************************
 * Obtiene, en caso de que exista, un camino entre ‘v1‘ y ‘v2

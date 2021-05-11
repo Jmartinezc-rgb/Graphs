@@ -62,8 +62,8 @@ public class AppTest{
     }
 
     @Test (expected = Exception.class)
-    void obtainAdjacentsFailWithException() {
-        this.myGraph.obtainAdjacents(myEdge);
+    public void obtainAdjacentsFailAndException() throws Exception {
+        this.myGraph.obtainAdjacents(1);
     }
 
 
