@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="pr2.org.AppTest" time="0.051" tests="9" errors="1" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="pr2.org.AppTest" time="0.073" tests="14" errors="0" skipped="0" failures="1">
   <properties>
     <property name="awt.toolkit" value="sun.awt.X11.XToolkit"/>
     <property name="java.specification.version" value="11"/>
@@ -14,7 +14,7 @@
     <property name="os.name" value="Linux"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-11-openjdk-amd64/lib"/>
-    <property name="sun.java.command" value="/mnt/c/Users/javim/Desktop/PROGRAMACIÓN/PR2/practica3/Graphs/my-app/target/surefire/surefirebooter1758786545108674592.jar /mnt/c/Users/javim/Desktop/PROGRAMACIÓN/PR2/practica3/Graphs/my-app/target/surefire 2021-05-11T10-44-52_466-jvmRun1 surefire13248116405413064533tmp surefire_05812766105758891747tmp"/>
+    <property name="sun.java.command" value="/mnt/c/Users/javim/Desktop/PROGRAMACIÓN/PR2/practica3/Graphs/my-app/target/surefire/surefirebooter12151916961319321948.jar /mnt/c/Users/javim/Desktop/PROGRAMACIÓN/PR2/practica3/Graphs/my-app/target/surefire 2021-05-17T10-04-07_791-jvmRun1 surefire6966377025223773096tmp surefire_02832559493612041882tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/mnt/c/Users/javim/Desktop/PROGRAMACIÓN/PR2/practica3/Graphs/my-app/target/test-classes:/mnt/c/Users/javim/Desktop/PROGRAMACIÓN/PR2/practica3/Graphs/my-app/target/classes:/home/javim/.m2/repository/junit/junit/4.11/junit-4.11.jar:/home/javim/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="/mnt/c/Users/javim/Desktop/PROGRAMACIÓN/PR2/practica3/Graphs/my-app/target/surefire/surefirebooter1758786545108674592.jar"/>
+    <property name="surefire.real.class.path" value="/mnt/c/Users/javim/Desktop/PROGRAMACIÓN/PR2/practica3/Graphs/my-app/target/surefire/surefirebooter12151916961319321948.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="11.0.10+9-Ubuntu-0ubuntu1.18.04"/>
     <property name="user.name" value="javim"/>
@@ -56,21 +56,25 @@
     <property name="java.class.version" value="55.0"/>
   </properties>
   <testcase name="myEdgeExists" classname="pr2.org.AppTest" time="0.002"/>
-  <testcase name="shouldAnswerWithTrue" classname="pr2.org.AppTest" time="0"/>
+  <testcase name="addEdgeOktoString" classname="pr2.org.AppTest" time="0"/>
+  <testcase name="shouldAnswerWithTrue" classname="pr2.org.AppTest" time="0.001"/>
   <testcase name="myGraphExists" classname="pr2.org.AppTest" time="0"/>
-  <testcase name="addEdgeOk" classname="pr2.org.AppTest" time="0.002"/>
+  <testcase name="addVertexOktoString" classname="pr2.org.AppTest" time="0"/>
+  <testcase name="addEdgeOk" classname="pr2.org.AppTest" time="0"/>
+  <testcase name="addEdgeFailtoString" classname="pr2.org.AppTest" time="0"/>
+  <testcase name="onePathFindsAPath" classname="pr2.org.AppTest" time="0.01">
+    <failure message="expected:&lt;[1, 5, 6, 4]&gt; but was:&lt;[1, 1, 1]&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<[1, 5, 6, 4]> but was:<[1, 1, 1]>
+	at pr2.org.AppTest.onePathFindsAPath(AppTest.java:144)
+]]></failure>
+    <system-out><![CDATA[
+Test onePathFindsAPath
+----------------------
+]]></system-out>
+  </testcase>
   <testcase name="addVertexFail" classname="pr2.org.AppTest" time="0"/>
   <testcase name="addEdgeFail" classname="pr2.org.AppTest" time="0"/>
   <testcase name="addVertexOk" classname="pr2.org.AppTest" time="0"/>
-  <testcase name="obtainAdjacentsFailAndException" classname="pr2.org.AppTest" time="0.001"/>
-  <testcase name="firstToStringTest" classname="pr2.org.AppTest" time="0.006">
-    <error message="Unresolved compilation problems: &#10;	Syntax error, insert &quot;;&quot; to complete BlockStatements&#10;	Syntax error, insert &quot;)&quot; to complete Expression&#10;	graph cannot be resolved&#10;" type="java.lang.Error">java.lang.Error: 
-Unresolved compilation problems: 
-	Syntax error, insert ";" to complete BlockStatements
-	Syntax error, insert ")" to complete Expression
-	graph cannot be resolved
-
-	at pr2.org.AppTest.firstToStringTest(AppTest.java:73)
-</error>
-  </testcase>
+  <testcase name="obtainAdjacentsFailAndException" classname="pr2.org.AppTest" time="0"/>
+  <testcase name="addVertexFailtoString" classname="pr2.org.AppTest" time="0"/>
+  <testcase name="firstToStringTest" classname="pr2.org.AppTest" time="0"/>
 </testsuite>

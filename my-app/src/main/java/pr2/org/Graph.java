@@ -1,8 +1,12 @@
 package pr2.org;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.Stack;
 import java.util.TreeSet;
 
 public class Graph<V>{
@@ -67,7 +71,11 @@ public Set<V> obtainAdjacents(V v) throws Exception{
     * @return ‘true‘ si ‘v‘ es un vértice del grafo.
     ******************************************************************/
 public boolean containsVertex(V v){
-        return null; //Este código hay que modificarlo.
+        if(this.adjacencyList.containsKey(v)){
+            return true;
+        }else{
+            return false;}
+     //Este código hay que modificarlo.
     }
     /******************************************************************
     * Método ‘toString()‘ reescrito para la clase ‘Grafo.java‘.
@@ -77,13 +85,12 @@ public boolean containsVertex(V v){
 
 @Override
 public String toString(){
-    StringBuilder mycode = new StringBuilder("Vertice\t Conexiones\n")
-    for (V graph : this.adjacencyList.keySet()){
-        mycode.append(graph.toString());
-        mycode.append("Vertice\t Conexiones\n");
-        mycode.append(adjacencyList.get(graph).toString();
+    StringBuilder mycode = new StringBuilder("Vertice\t Conexiones\n");
+    for (V vertice : this.adjacencyList.keySet()){
+        mycode.append(vertice.toString());
+        mycode.append(adjacencyList.get(vertice).toString() + "\n");
     }
-    return graph.toString(); //Este código hay que modificarlo.
+    return mycode.toString();
 }
 /******************************************************************
 * Obtiene, en caso de que exista, un camino entre ‘v1‘ y ‘v2
@@ -96,7 +103,54 @@ public String toString(){
 ‘v2‘
 * pasando por arcos del grafo.
 ******************************************************************/
-/*public List<V> onePath(V v1, V v2){
-return null; //Este código hay que modificarlo.
-}*/
+public List<V> onePath(V v1, V v2){
+    List<V> trazaList = new ArrayList<>();
+    Stack<V> abierta = new Stack<>();
+    Set<V> yaLeidosSet = new HashSet<>();
+
+    abierta.push(v1);
+    trazaList.add(v1);
+    boolean encontrado = false;
+    while (!abierta.empty() && !encontrado) {
+        V vertexTraveler = abierta.pop();
+        if(vertexTraveler.equals(v2)){
+            encontrado = true;
+        }else{
+            for (V adjacentsV : this.adjacencyList.get(vertexTraveler)){
+                abierta.push(adjacentsV);
+                trazaList.add(vertexTraveler);
+                yaLeidosSet.add(adjacentsV);
+            }
+        }
+        if(encontrado){
+            return trazaList;
+        }else{
+            return abierta;
+        }
+    }
+    return abierta;
 }
+}
+/*
+V verticeAdjacente = mipila.pop();
+el while lo itera hasta que lo encuentre y la pila no este vacia 
+el pop es lo que hace viajar en el grafo
+si hago pop en 3 ire al numero 3
+
+cuando ese pop esta viajando a un nuevo vertice o a un conocido
+
+si visita a uno ya conocido estas dando marcha atras usarias remove -1 es decir el uktimo elemento
+si es false el elmento es nuevo traza.add
+
+camino del 1 al 4 meto en la pila los element en orden creciente
+vaijo del 1 al 2
+pop del 1, 1 es = 4, no.
+apilas los adyacentes de 4 (2,3)
+
+pop del 2 es nuevo asi que traza.add
+2 no es igual a 4 asi que adyacentes de 2 (1)
+1 ya es visitado
+
+por lo que eliminas 2 de la traza y haces pop de 3 para meterlo en traza.add
+al hacer pop .
+*/

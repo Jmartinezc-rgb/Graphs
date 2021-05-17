@@ -1,13 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: pr2.org.AppTest
 -------------------------------------------------------------------------------
-Tests run: 9, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.051 s <<< FAILURE! - in pr2.org.AppTest
-firstToStringTest(pr2.org.AppTest)  Time elapsed: 0.006 s  <<< ERROR!
-java.lang.Error: 
-Unresolved compilation problems: 
-	Syntax error, insert ";" to complete BlockStatements
-	Syntax error, insert ")" to complete Expression
-	graph cannot be resolved
-
-	at pr2.org.AppTest.firstToStringTest(AppTest.java:73)
+Tests run: 14, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.073 s <<< FAILURE! - in pr2.org.AppTest
+onePathFindsAPath(pr2.org.AppTest)  Time elapsed: 0.01 s  <<< FAILURE!
+java.lang.AssertionError: expected:<[1, 5, 6, 4]> but was:<[1, 1, 1]>
+	at pr2.org.AppTest.onePathFindsAPath(AppTest.java:144)
 
