@@ -18,10 +18,13 @@ El Algortimo de Dijkstra, también denominado Algoritmo de caminos mínimos, es 
 ## COMANDOS ##
 Se utilizarán los siguientes comandos :page_facing_up:
 
-:one:mvn test: para el desarrollo guiado por pruebas [TDD](https://es.wikipedia.org/wiki/Desarrollo_guiado_por_pruebas#:~:text=Desarrollo%20guiado%20por%20pruebas%20de%20software%2C%20o%20Test%2Ddriven%20development,)%20y%20Refactorizaci%C3%B3n%20(Refactoring).) (click en TDD para saber lo que es)
-:two:mvn compile: para compilar el proyecto
-:three:mvn clean: para hacer clean del proyeto maven eliminando la carpeta target
-:four:mvn clean compile assembly:single: para general el archivo .jar
+-:one:mvn test: para el desarrollo guiado por pruebas [TDD](https://es.wikipedia.org/wiki/Desarrollo_guiado_por_pruebas#:~:text=Desarrollo%20guiado%20por%20pruebas%20de%20software%2C%20o%20Test%2Ddriven%20development,)(click en TDD para saber lo que es)
+
+-:two:mvn compile: para compilar el proyecto
+
+-:three:mvn clean: para hacer clean del proyeto maven eliminando la carpeta target
+
+-:four:mvn clean compile assembly:single: para general el archivo .jar
 
 ## REQUISITOS ##
 Para la utilización de este repositorio se necesitará:mag:
