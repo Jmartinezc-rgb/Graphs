@@ -104,7 +104,7 @@ public class AppTest{
         assertTrue(myGraph.addEdge(1 , 2));
         assertEquals(expectedOutput 
             + "1[2]\n"
-            + "2[1]\n", myGraph.toString());
+            + "2[]\n", myGraph.toString());
     }
 
     @Test
@@ -134,7 +134,7 @@ public class AppTest{
     g.addEdge(1, 5);
     g.addEdge(5, 6);
     g.addEdge(6, 4);
-    // Se construye el camino esperado.
+    // Se construye el camino esperado.*/
     List<Integer> expectedPath = new ArrayList<>();
     expectedPath.add(1);
     expectedPath.add(5);

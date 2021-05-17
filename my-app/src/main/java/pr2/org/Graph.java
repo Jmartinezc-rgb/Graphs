@@ -40,10 +40,8 @@ public boolean addVertex(V v){
 public boolean addEdge(V v1, V v2){
     if(adjacencyList.containsKey(v1) && adjacencyList.containsKey(v2)){
         Set<V> theEdgesFromV1 = adjacencyList.get(v1);
-        Set<V> theEdgesFromV2 = adjacencyList.get(v2);
-        if(!theEdgesFromV1.contains(v2) && !theEdgesFromV2.contains(v1)){
+        if(!theEdgesFromV1.contains(v2)){
             theEdgesFromV1.add(v2);
-            theEdgesFromV2.add(v1);
             return true;
         }
         else return false;
@@ -106,30 +104,22 @@ public String toString(){
 public List<V> onePath(V v1, V v2){
     List<V> trazaList = new ArrayList<>();
     Stack<V> abierta = new Stack<>();
-    Set<V> yaLeidosSet = new HashSet<>();
-
     abierta.push(v1);
-    trazaList.add(v1);
     boolean encontrado = false;
     while (!abierta.empty() && !encontrado) {
         V vertexTraveler = abierta.pop();
+        trazaList.add(vertexTraveler);
         if(vertexTraveler.equals(v2)){
             encontrado = true;
         }else{
             for (V adjacentsV : this.adjacencyList.get(vertexTraveler)){
                 abierta.push(adjacentsV);
-                trazaList.add(vertexTraveler);
-                yaLeidosSet.add(adjacentsV);
-            }
+            }                    
         }
-        if(encontrado){
-            return trazaList;
-        }else{
-            return abierta;
-        }
+        if(encontrado) return trazaList;
     }
-    return abierta;
-}
+    return null;
+    }
 }
 /*
 V verticeAdjacente = mipila.pop();
