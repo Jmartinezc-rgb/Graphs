@@ -16,13 +16,19 @@ El Algortimo de Dijkstra, también denominado Algoritmo de caminos mínimos, es 
 ![Alt text](https://4.bp.blogspot.com/-W7l7-YMEmLg/WfJ1SO_02_I/AAAAAAAAB7k/gW-QVpN-yWcwyYeR5mnKE53S-4E2KYJ2ACLcBGAs/s1600/giphy.gif)
 
 ## COMANDOS ##
-Se utilizarán los siguientes comandos: :page_facing_up:
+Se utilizarán los siguientes comandos :page_facing_up:
+
+:one:mvn test: para el desarrollo guiado por pruebas [TDD](https://es.wikipedia.org/wiki/Desarrollo_guiado_por_pruebas#:~:text=Desarrollo%20guiado%20por%20pruebas%20de%20software%2C%20o%20Test%2Ddriven%20development,)%20y%20Refactorizaci%C3%B3n%20(Refactoring).) (click en TDD para saber lo que es)
+:two:mvn compile: para compilar el proyecto
+:three:mvn clean: para hacer clean del proyeto maven eliminando la carpeta target
+:four:mvn clean compile assembly:single: para general el archivo .jar
 
 ## REQUISITOS ##
-Para la utilización de este repositorio se necesitará: :mag:
+Para la utilización de este repositorio se necesitará:mag:
  
 -:green_book:[Maven](https://maven.apache.org/).
 [Aquí](https://myhanoli.com/2018/06/23/comoinstalarmavenenwindows/) una guía de como instalarlo o una guía formato video haz click [aquí](https://www.youtube.com/watch?v=snp1dTlJxqw&ab_channel=MitoCode).
 
 -:blue_book:[Java](https://www.java.com/es/download/ie_manual.jsp) una guía de como instalarlo o una guía formato video haz [aquí](https://www.youtube.com/watch?v=s2YkWxVo49o&ab_channel=programadornovato)
+
 -:orange_book:[JDK](https://www.youtube.com/watch?v=Stx3MNV3AHE&ab_channel=programadornovato) ver el vido para instalar el JDK.
