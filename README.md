@@ -1,6 +1,6 @@
 # GRAPHS #
 
-En matemáticas y ciencias de la computación, un grafo (del griego grafos: dibujo, imagen)1​ es un conjunto de objetos llamados vértices o nodos unidos por enlaces llamados aristas o arcos, que permiten representar relaciones binarias entre elementos de un conjunto.2​Son objeto de estudio de la teoría de grafos.
+En matemáticas y ciencias de la computación, un grafo (del griego grafos)​ es un conjunto de objetos llamados vértices o nodos unidos por enlaces llamados aristas o arcos, que permiten representar relaciones binarias entre elementos de un conjunto.
 
 Típicamente, un grafo se representa gráficamente como un conjunto de puntos (vértices o nodos) unidos por líneas (aristas).
 
@@ -25,6 +25,7 @@ Se utilizarán los siguientes comandos :page_facing_up:
 -:three:mvn clean: para hacer clean del proyeto maven eliminando la carpeta target
 
 -:four:mvn clean compile assembly:single: para general el archivo .jar
+-:five:mvn site: para generar el javadoc
 
 ## REQUISITOS ##
 Para la utilización de este repositorio se necesitará:mag:
