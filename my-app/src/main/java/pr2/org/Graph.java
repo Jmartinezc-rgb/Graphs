@@ -34,6 +34,7 @@ private Map<V, Set<V>> adjacencyList = new HashMap<>();
 * Añade el vértice ‘v‘ al grafo.
 * //Complejidad espacial O(1) constante
 * //Complejidad temporal O(1) constante
+*
 * @param v vértice a añadir.
 * @return ‘true‘ si no estaba anteriormente y ‘false‘ en caso
 * contrario.
@@ -54,6 +55,7 @@ public boolean addVertex(V v){
     *
     * //Complejidad espacial O(1) constante
     * //Complejidad temporal O(1) constante
+    *
     * @param v1 el origen del arco.
     * @param v2 el destino del arco.
     * @return ‘true‘ si no existía el arco y ‘false‘ en caso
@@ -77,6 +79,7 @@ public boolean addEdge(V v1, V v2){
     *
     * //Complejidad espacial O(1) constante
     * //Complejidad temporal O(1) constante
+    *
     * @param v vértice del que se obtienen los adyacentes.
     * @return conjunto de vértices adyacentes.
     ******************************************************************/
@@ -89,6 +92,7 @@ public Set<V> obtainAdjacents(V v) throws Exception{
     }
     /******************************************************************
     * Comprueba si el grafo contiene el vértice dado.
+    *
     * //Complejidad espacial O(1) constante
     * //Complejidad temporal O(1)constante
     *
@@ -128,10 +132,10 @@ public String toString(){
 * @param v1 el vértice origen.
 * @param v2 el vértice destino.
 * @return lista con la secuencia de vértices desde ‘v1‘ hasta
-‘v2‘
+* ‘v2‘ pasando por arcos del grafo.
 * //Complejidad espacial O(1) constante
 * //Complejidad temporal O(n^2) cuadrática
-* pasando por arcos del grafo.
+* 
 ******************************************************************/
 public List<V> onePath(V v1, V v2){
     List<V> trazaList = new ArrayList<>();
@@ -153,3 +157,4 @@ public List<V> onePath(V v1, V v2){
     return null;
     }
 }
+//Este comentario indica que el último commit se realizó el dia 18 de Mayo del 2021 a las 18:30
