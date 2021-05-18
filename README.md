@@ -25,6 +25,7 @@ Se utilizarán los siguientes comandos :page_facing_up:
 -:three:mvn clean: para hacer clean del proyeto maven eliminando la carpeta target
 
 -:four:mvn clean compile assembly:single: para general el archivo .jar
+
 -:five:mvn site: para generar el javadoc
 
 ## REQUISITOS ##
