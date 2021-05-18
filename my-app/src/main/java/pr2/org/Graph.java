@@ -1,3 +1,13 @@
+/*Copyright 2021 Javier Martínez Cristóbal
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+http://www.apache.org/licenses/LICENSE-2.0
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.*/
 package pr2.org;
 
 import java.util.ArrayList;
@@ -8,16 +18,27 @@ import java.util.Set;
 import java.util.Stack;
 import java.util.TreeSet;
 
+/**
+ * La clase Graph contiene los distintos métodos necesarios para
+ * crear un grafo. Desarrollado a través de TDD en la clase AppTest
+ * 
+ * @author Javier Martinez Cristobal
+ * @version 18/05/2021
+ * 
+ */
+
 public class Graph<V>{
 //Lista de adyacencia.
 private Map<V, Set<V>> adjacencyList = new HashMap<>();
 /******************************************************************
 * Añade el vértice ‘v‘ al grafo.
-*
+* //Complejidad espacial O(1) constante
+* //Complejidad temporal O(1) constante
 * @param v vértice a añadir.
 * @return ‘true‘ si no estaba anteriormente y ‘false‘ en caso
 * contrario.
 ******************************************************************/
+
 public boolean addVertex(V v){
     if(adjacencyList.containsKey(v)){
         return false; //existía anteriormente
@@ -31,6 +52,8 @@ public boolean addVertex(V v){
     * caso de que no exista alguno de los vértices, lo añade
     * también.
     *
+    * //Complejidad espacial O(1) constante
+    * //Complejidad temporal O(1) constante
     * @param v1 el origen del arco.
     * @param v2 el destino del arco.
     * @return ‘true‘ si no existía el arco y ‘false‘ en caso
@@ -52,9 +75,12 @@ public boolean addEdge(V v1, V v2){
     /******************************************************************
     * Obtiene el conjunto de vértices adyacentes a ‘v‘.
     *
+    * //Complejidad espacial O(1) constante
+    * //Complejidad temporal O(1) constante
     * @param v vértice del que se obtienen los adyacentes.
     * @return conjunto de vértices adyacentes.
     ******************************************************************/
+
 public Set<V> obtainAdjacents(V v) throws Exception{
     if (adjacencyList.containsKey(v)){
         return adjacencyList.get(v);
@@ -63,10 +89,13 @@ public Set<V> obtainAdjacents(V v) throws Exception{
     }
     /******************************************************************
     * Comprueba si el grafo contiene el vértice dado.
+    * //Complejidad espacial O(1) constante
+    * //Complejidad temporal O(1)constante
     *
     * @param v vértice para el que se realiza la comprobación.
     * @return ‘true‘ si ‘v‘ es un vértice del grafo.
     ******************************************************************/
+
 public boolean containsVertex(V v){
         if(this.adjacencyList.containsKey(v)){
             return true;
@@ -76,6 +105,8 @@ public boolean containsVertex(V v){
     }
     /******************************************************************
     * Método ‘toString()‘ reescrito para la clase ‘Grafo.java‘.
+    * //Complejidad espacial O(1) constante
+    * //Complejidad temporal O(n) lineal
     * @return una cadena de caracteres con la lista de adyacencia
     .
     ******************************************************************/
@@ -98,6 +129,8 @@ public String toString(){
 * @param v2 el vértice destino.
 * @return lista con la secuencia de vértices desde ‘v1‘ hasta
 ‘v2‘
+* //Complejidad espacial O(1) constante
+* //Complejidad temporal O(n^2) cuadrática
 * pasando por arcos del grafo.
 ******************************************************************/
 public List<V> onePath(V v1, V v2){
@@ -120,26 +153,3 @@ public List<V> onePath(V v1, V v2){
     return null;
     }
 }
-/*
-V verticeAdjacente = mipila.pop();
-el while lo itera hasta que lo encuentre y la pila no este vacia 
-el pop es lo que hace viajar en el grafo
-si hago pop en 3 ire al numero 3
-
-cuando ese pop esta viajando a un nuevo vertice o a un conocido
-
-si visita a uno ya conocido estas dando marcha atras usarias remove -1 es decir el uktimo elemento
-si es false el elmento es nuevo traza.add
-
-camino del 1 al 4 meto en la pila los element en orden creciente
-vaijo del 1 al 2
-pop del 1, 1 es = 4, no.
-apilas los adyacentes de 4 (2,3)
-
-pop del 2 es nuevo asi que traza.add
-2 no es igual a 4 asi que adyacentes de 2 (1)
-1 ya es visitado
-
-por lo que eliminas 2 de la traza y haces pop de 3 para meterlo en traza.add
-al hacer pop .
-*/

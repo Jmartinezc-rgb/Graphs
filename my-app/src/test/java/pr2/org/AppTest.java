@@ -1,3 +1,13 @@
+/*Copyright 2021 Javier Martínez Cristóbal
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+http://www.apache.org/licenses/LICENSE-2.0
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.*/
 package pr2.org;
 
 import static org.junit.Assert.assertEquals;
@@ -28,57 +38,52 @@ public class AppTest{
     public void shouldAnswerWithTrue(){
         assertTrue( true );
     }
-    //primer test
-
+    //primer test existe mi grafo
     @Test
     public void myGraphExists(){
         assertNotNull(myGraph);
     }
-
+    //test vacío de toString
     @Test
     public void firstToStringTest() {
         String expectedOutput = "Vertice\t Conexiones\n";
         assertEquals(expectedOutput + "", myGraph.toString());
     }
-
+    //test para añadir un vértice
     @Test
     public void addVertexOk(){
         assertTrue(myGraph.addVertex(1));
         assertTrue(myGraph.addVertex(2));
     }
-
+    //test para impedir la repetición de vértices
     @Test
     public void addVertexFail(){
         assertTrue(myGraph.addVertex(1));
         assertFalse(myGraph.addVertex(1));
     }
-
+    //primer test de edge
     @Test
     public void myEdgeExists(){
         assertNotNull(myEdge);
     }
-
+    //test para añadir un arista (edge) entre dos vértices
     @Test
     public void addEdgeOk(){
         myGraph.addVertex(1);
         myGraph.addVertex(2);
         assertTrue(myGraph.addEdge(1 , 2));
     }
-
+    //test para impedir la repetición de aristas (edges)
     @Test
     public void addEdgeFail(){
         assertFalse(myEdge.addEdge(1 ,2));
     }
-
+    //test para obligar que obtainAdjacents lanze(throw) una expección 
     @Test (expected = Exception.class)
     public void obtainAdjacentsFailAndException() throws Exception {
         this.myGraph.obtainAdjacents(1);
     }
-
-
-    //Test que posiblemente no funcionen
-    //Consultar
-    //El objetivo es ir testeando por esta vez con el toString method
+    //Tests anteriores pero con expectedOutput 
     @Test
     public void addVertexOktoString(){
         String expectedOutput = "Vertice\t Conexiones\n";
@@ -129,18 +134,19 @@ public class AppTest{
     g.addVertex(4);
     g.addVertex(5);
     g.addVertex(6);
+
     g.addEdge(1, 2);
     g.addEdge(3, 4);
     g.addEdge(1, 5);
     g.addEdge(5, 6);
     g.addEdge(6, 4);
-    // Se construye el camino esperado.*/
+    // Se construye el camino esperado.
     List<Integer> expectedPath = new ArrayList<>();
     expectedPath.add(1);
     expectedPath.add(5);
     expectedPath.add(6);
     expectedPath.add(4);
-    //Se comprueba si el camino devuelto es igual al esperado.*/
+    //Se comprueba si el camino devuelto es igual al esperado.
     assertEquals(expectedPath, g.onePath(1, 4));
     }
 }
